@@ -7,7 +7,11 @@ Pico-pure is a simple flat and responsive blog theme for Pico CMS. It was made u
 ### Installation
 Create a folder named **pure** in your pico theme folder. Then copy the files into the folder.
 Open the `config.php` file in your root of pico. Add this line:
+
 `$config['theme'] = 'pure';`
+
+### Reccomended settings
+* the theme should be used for a blog
 
 
 
