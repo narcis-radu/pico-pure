@@ -1,0 +1,84 @@
+/*
+ * Navigataur: A pure CSS responsive navigation menu
+ * Author: Mike King (@micjamking)
+ */
+
+/*
+ 	Notes:
+ 
+ 	- Media queries should be edited in both style sections if you require 
+	  a different breakpoint for your navigation.
+	  
+	- Toggle class & menu anchor tags in list items have box-sizing: border-box 
+	  style property to allow padding inside the container without conflicting with layout.	
+
+*/
+
+
+/*--------------------------------
+ Functional Styles (Required)
+---------------------------------*/
+/* Tim Pietrusky advanced checkbox hack (Android <= 4.1.2) */
+body{ -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
+
+#toggle, .toggle { display: none; }
+
+
+/* Nicolas Gallagher micro clearfix */
+.clearfix:before, .clearfix:after { display: table; content: ""; }
+.clearfix:after { clear: both; }
+
+@media only screen and (max-width: 768px){
+	.menu { display: none; opacity: 0; width: 100%; position: absolute; right: 0; }
+	.menu > li { width: 100%; margin: 0; list-style: none; float:left;}
+	.menu > li > a { display: block; width: 100%; text-decoration: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+	.toggle { display: block; position: relative; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+	#toggle:checked ~ .menu { display: block; opacity: 1;}
+}
+
+
+/*--------------------------------
+ Presentation Styles (Editable)
+---------------------------------*/
+.toggle{ 
+	z-index: 2; 
+}
+
+@media only screen and (max-width: 768px){
+	
+	.menu > li > a:hover, .menu > li > a:focus{
+		background: #34495e;
+        color: #1abc9c;
+	}
+	
+	.toggle:after {
+		content: attr(data-open);
+		display: block;
+		margin: 1em auto 0em;
+        width: 100%;
+		padding: 0.7em 0px;
+		background: #1abc9c;
+		text-align: center;
+		font-size: 1em;
+		color: #FFFFFF;
+		box-sizing: border-box; 
+	}
+	
+	.toggle:hover:after{
+		background: #16a085;
+	}
+	
+	#toggle:checked + .toggle:after{
+		content: attr(data-close);
+	}
+    
+    .lt-ie9 #toggle, .lt-ie9 .toggle {
+        display: none;
+    }
+    
+    .lt-ie9 .menu {
+        margin-top: 1em;
+        display: block;
+    }
+}

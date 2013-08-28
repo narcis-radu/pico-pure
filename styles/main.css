@@ -1,0 +1,112 @@
+body {
+    color: #333;
+    font-family: 'PT Sans', Helvetica Neue, Arial, sans-serif;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 0;
+}
+
+#container {  
+    padding-left: 16em;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 16em;
+    margin-left: -16em;
+    color: #fff;
+    padding-top: 5em;
+    text-align: center;
+    background: #2c3e50;
+}
+
+#content {
+    padding: 2em 3em 0;
+}
+
+.pure-menu-custom ul {
+    margin-top: 1em;
+}
+
+.pure-menu-custom.pure-menu-open, .pure-menu-custom.pure-menu-horizontal li .pure-menu-children {
+    background: none;
+    border: none;
+}
+
+.pure-menu-custom li a:hover,.pure-menu-custom li a:focus, a:hover, a:focus {
+    background: none;
+    color: #1abc9c;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;    
+}
+
+.pure-menu-custom a, .pure-menu-custom .pure-menu-can-have-children>li:after {
+    color: #fff;
+}
+
+.pure-menu-custom .pure-menu-selected a {
+    color: #1abc9c;
+}
+
+.post {
+    margin-bottom: 2em;
+    font-size: 1.5em;
+}
+
+.post a{
+    text-decoration: underline;
+}
+
+.post>h2 a {
+    text-decoration: none;
+}
+
+.meta {
+    margin: 0;
+    color: #777;
+    font-size: .8em;
+}
+
+blockquote {
+    border-left: .3em solid #1abc9c;
+    margin-left: 0;
+    padding-left: 1.5em;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        margin: 0;
+        background: #2c3e50;
+        padding-top: 2em;
+    }    
+    
+    #container {
+        padding: 0;
+    }
+    
+    .pure-menu-custom ul {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #content {
+        padding: 2em 1em 0;
+    }
+}

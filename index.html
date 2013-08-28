@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% if not(is_front_page) %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+{% if meta.description %}
+        <meta name="description" content="{{ meta.description }}">
+{% endif %}
+{% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}">
+{% endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{ theme_url }}/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+        <link rel="stylesheet" href="{{ theme_url }}/styles/main.css">
+        <link rel="stylesheet" href="{{ theme_url }}/styles/navigataur.css">
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="{{ theme_url }}/javascripts/vendor/respond.min.js"></script>
+    </head>
+    <body>        
+        <div id="container" class="pure-g-r">
+            <div class="sidebar pure-u">
+                <a href="{{ base_url }}">
+                    <img src="{{ theme_url }}/images/logo.png" alt="{{ site_title }}" />
+                </a>
+                <div class="pure-menu pure-menu-open pure-menu-custom header">
+                    <input type="checkbox" id="toggle" />
+                    <label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick></label>
+                    <ul class="menu">
+{% for page in pages %}{% if not(page.date) and not(page.url == base_url~'/') %}
+                        <li><a href="{{ page.url }}">{{ page.title }}</a></li>                         
+{% endif %}{% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="pure-u-1">
+                <div id="content">
+{% if is_front_page %}
+{% for page in pages %}
+{% if page.date and not(page.url == base_url~'/') %}
+		    <div class="post">
+		        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+		        <p class="meta">Published {{ page.date_formatted }}</p>
+		        <p class="excerpt">{{ page.excerpt }}</p>                
+		    </div>
+{% endif %}
+{% endfor %}
+{% else %}
+		    <div class="post">
+{% if meta.title %}
+		        <h2>{{ meta.title }}</h2>
+{% endif %}
+		        <p class="meta">Published {{ meta.date_formatted }}</p>
+		        {% spaceless %}{{ content }}{% endspaceless %}
+				
+		    </div>
+{% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
