@@ -2,7 +2,7 @@ pico-pure
 =========
 
 ### About
-Pico-pure is a simple **flat** and **responsive** blog theme for Pico CMS. It was made using [Pure](https://github.com/yui/pure), [Navigataur](https://github.com/micjamking/Navigataur) and [Respond](https://github.com/scottjehl/Respond).
+Pico-pure is a simple **flat** and **responsive** blog theme for [Pico](https://github.com/gilbitron/Pico). It was made using [Pure](https://github.com/yui/pure), [Navigataur](https://github.com/micjamking/Navigataur) and [Respond](https://github.com/scottjehl/Respond).
 
 ![pico-pure](https://raw.github.com/narcis-radu/pico-pure/master/screenshot.jpg)
 
