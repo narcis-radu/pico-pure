@@ -26,4 +26,7 @@ WTFPL
 ### Issues and Requests
 Feel free to contact me
 
+### NOTE
+This is still **work in progress**. I've made this just to familiarize myself with [Pure](https://github.com/yui/pure)
+
 
