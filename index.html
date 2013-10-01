@@ -54,7 +54,9 @@
 {% if meta.title %}
 		        <h2>{{ meta.title }}</h2>
 {% endif %}
+{% if meta.date %}
 		        <p class="meta">Published {{ meta.date_formatted }}</p>
+{% endif %}
 		        {% spaceless %}{{ content }}{% endspaceless %}
 				
 		    </div>
