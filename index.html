@@ -15,14 +15,15 @@
 {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="{{ theme_url }}/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
         <link rel="stylesheet" href="{{ theme_url }}/styles/main.css">
         <link rel="stylesheet" href="{{ theme_url }}/styles/navigataur.css">
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="{{ theme_url }}/javascripts/vendor/respond.min.js"></script>
     </head>
-    <body>        
-        <div id="container" class="pure-g-r">
+
+    <body>
+        <div class="container pure-g">
             <div class="sidebar pure-u">
                 <a href="{{ base_url }}">
                     <img src="{{ theme_url }}/images/logo.png" alt="{{ site_title }}" />
@@ -32,20 +33,20 @@
                     <label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick></label>
                     <ul class="menu">
 {% for page in pages %}{% if not(page.date) and not(page.url == base_url~'/') %}
-                        <li><a href="{{ page.url }}">{{ page.title }}</a></li>                         
+                        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
 {% endif %}{% endfor %}
                     </ul>
                 </div>
             </div>
             <div class="pure-u-1">
-                <div id="content">
+                <div class="content">
 {% if is_front_page %}
 {% for page in pages %}
 {% if page.date and not(page.url == base_url~'/') %}
 		    <div class="post">
 		        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
 		        <p class="meta">Published {{ page.date_formatted }}</p>
-		        <p class="excerpt">{{ page.excerpt }}</p>                
+		        <p class="excerpt">{{ page.excerpt }}</p>
 		    </div>
 {% endif %}
 {% endfor %}
@@ -58,7 +59,7 @@
 		        <p class="meta">Published {{ meta.date_formatted }}</p>
 {% endif %}
 		        {% spaceless %}{{ content }}{% endspaceless %}
-				
+
 		    </div>
 {% endif %}
                 </div>
