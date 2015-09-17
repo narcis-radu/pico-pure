@@ -12,7 +12,7 @@ Open the `config.php` file in your root of pico. Add this line:
 
 `$config['theme'] = 'pure';`
 
-### Reccomended settings
+### Recommended settings
 * the theme should be used for a **blog**
 * order your pages **by date** `$config['pages_order_by'] = 'date';`
 * order your pages **descending** `$config['pages_order'] = 'desc';`
